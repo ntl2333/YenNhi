@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            max-width: 1000px;
+            max-height: 800px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .birthday-wish {
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 30px;
+            max-width: 60%;
+        }
+        .birthday-wish h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .birthday-wish p {
+            font-size: 24px;
+            color: #ffffff;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .image-item {
+            position: absolute;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            z-index: 20;
+        }
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="birthday-wish">
+            <h1>Chúc mừng ngày đặc biệt của em!</h1>
+            <p>Chúc em tuổi mới mau ăn chóng lớn,<br>
+            bớt làm anh lo nè, luôn vui vẻ<br>
+            và ngày càng xinh đẹp rực rỡ nhoaaa</p>
+        </div>
+        <div class="image-item" style="width: 200px; height: 200px; top: 5%; left: 5%; transform: rotate(-5deg);">
+            <img src="https://i.imgur.com/pQsPjaU.jpg" alt="Hình ảnh sinh nhật 1" />
+        </div>
+        <div class="image-item" style="width: 180px; height: 180px; top: 10%; right: 5%; transform: rotate(3deg);">
+            <img src="https://i.imgur.com/FQdTLLW.jpg" alt="Hình ảnh sinh nhật 2" />
+        </div>
+        <div class="image-item" style="width: 220px; height: 220px; bottom: 5%; left: 10%; transform: rotate(-2deg);">
+            <img src="https://i.imgur.com/yI9duGK.jpg" alt="Hình ảnh sinh nhật 3" />
+        </div>
+        <div class="image-item" style="width: 150px; height: 150px; top: 40%; left: 0; transform: rotate(5deg);">
+            <img src="https://i.imgur.com/8jRelVP.png" alt="Bánh kem" />
+        </div>
+        <div class="image-item" style="width: 130px; height: 130px; top: 30%; right: 0; transform: rotate(-4deg);">
+            <img src="https://i.imgur.com/ZFJkA9t.png" alt="Bóng bay" />
+        </div>
+        <div class="image-item" style="width: 100px; height: 100px; bottom: 20%; right: 15%; transform: rotate(3deg);">
+            <img src="https://i.imgur.com/5C8V3HI.png" alt="Nến" />
+        </div>
+        <div class="image-item" style="width: 160px; height: 160px; bottom: 10%; right: 5%; transform: rotate(-1deg);">
+            <img src="https://i.imgur.com/5N1pgyM.png" alt="Hoa" />
+        </div>
+        <div class="image-item" style="width: 140px; height: 140px; top: 60%; left: 5%; transform: rotate(2deg);">
+            <img src="https://i.imgur.com/pQH9KwC.png" alt="Quà tặng" />
+        </div>
+    </div>
+    <script>
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDuration = Math.random() * 1 + 0.5 + 's';
+            document.body.appendChild(sparkle);
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+        setInterval(createSparkle, 100);
+    </script>
+</body>
+</html>
